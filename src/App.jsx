@@ -89,6 +89,7 @@ export default function App() {
       gsap.set(grass, { scaleY: 0, transformOrigin: "50% 100%" });
       gsap.set(q(".petal"), { scale: 0, opacity: 0, transformOrigin: "50% 100%" });
       gsap.set(q(".bud"), { scale: 0, opacity: 0, transformOrigin: "50% 100%" });
+      gsap.set(q(".core"), { scale: 0, opacity: 0, transformOrigin: "50% 50%" });
       gsap.set(q(".halo"), { opacity: 0, transformOrigin: "50% 50%" });
 
       // sparkling stars
@@ -166,6 +167,7 @@ export default function App() {
         ease: "back.out(2.5)",
         stagger: 0.04,
       }, ">-0.4");
+      tl.to(q(".core"), { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(2.5)" }, "<");
 
       // 5. big cyan neon glow appears once ...
       tl.to(q(".halo"), {
@@ -307,7 +309,7 @@ export default function App() {
                           </g>
                         </g>
                       ))}
-                      <circle r="4" fill="#fff" />
+                      <circle className="core" r="4" fill="#fff" />
                     </g>
                   </g>
                 </g>
